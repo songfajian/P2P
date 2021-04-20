@@ -8,8 +8,16 @@
 }
 /* 页脚 */
 .footer {
+  margin-top: 30px;
   background: #f8f8f8;
   padding: 25px 0;
+}
+.footer .row {
+  padding: 0;
+  margin-left: -35px;
+}
+.footer .row .col-md-8 p {
+  margin: 20px;
 }
 .footer img {
   width: 100%;

@@ -6,7 +6,7 @@ const minifyCss = require("gulp-minify-css")//压缩css
 const imageMin = require("gulp-imagemin")//压缩图片
 const webserver = require("gulp-webserver")
 function jsTask() {
-    return src("./js/**/*.js")//读取js文件,匹配js文件夹下的所有.js文件（任意层级）
+    return src("/js/**/*.js")//读取js文件,匹配js文件夹下的所有.js文件（任意层级）
         .pipe(uglify())//压缩js文件
         .pipe(rename({
             "suffix": ".min"
@@ -15,7 +15,7 @@ function jsTask() {
 }
 
 function cssTask() {
-    return src("./less/**/*.less")//读取js文件,匹配js文件夹下的所有.js文件（任意层级）
+    return src("/less/**/*.less")//读取js文件,匹配js文件夹下的所有.js文件（任意层级）
         .pipe(less())//编译less
         .pipe(minifyCss())//压缩
         .pipe(rename({
@@ -24,19 +24,19 @@ function cssTask() {
         .pipe(dest("./dist/css"))//输出到目录
 }
 function imgTask() {
-    return src("./images/**/*.{png,JPG,gif,ico}")//读取图片文件,匹配images文件夹下的所有图片文件（任意层级）
+    return src("/images/**/*.{png,JPG,gif,ico}")//读取图片文件,匹配images文件夹下的所有图片文件（任意层级）
         .pipe(imageMin())//压缩
         .pipe(dest("./dist/images"))//输出到目录
 }
 
 function watchTask() {
-    watch("./less/**/*.less", {
+    watch("/less/**/*.less", {
         "events": ["add", "change", "unlink"]
     }, cssTask)
 }
 
 function serve(cb) {
-    src("./")
+    src("/")
         .pipe(webserver({
             livereload: true,
             open: true,
