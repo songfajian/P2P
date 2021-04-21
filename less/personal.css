@@ -1,14 +1,17 @@
-.personal-page .personal-left ul .parent {
+.personal-page .personal-left .list-group li {
+  text-indent: 2em;
+}
+.personal-page .personal-left .list-group li.parent {
   text-indent: 0;
   background: #f5f5f5;
 }
-.personal-page .personal-left ul li {
-  text-indent: 2em;
-}
-.personal-page .personal-left ul li a {
+.personal-page .personal-left .list-group li a {
   color: black;
 }
-.personal-page .personal-left ul li a:hover {
-  color: #525252;
+.personal-page .personal-left .list-group li a:hover {
+  color: #2e8ece;
   text-decoration: none;
+}
+.personal-page .personal-left .list-group li.active a {
+  color: #fff;
 }
